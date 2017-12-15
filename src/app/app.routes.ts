@@ -14,6 +14,7 @@ import { BlankLayoutComponent } from "./components/common/layouts/blankLayout.co
 import { BasicLayoutComponent } from "./components/common/layouts/basicLayout.component";
 import { TopNavigationLayoutComponent } from "./components/common/layouts/topNavigationlayout.component";
 import { UserComponent } from "app/views/user/user.component";
+import { AuthGuard } from "app/guards/auth.guard";
 
 export const ROUTES:Routes = [
   // Main redirect
@@ -31,28 +32,26 @@ export const ROUTES:Routes = [
       { path: 'dashboard5', component: Dashboard5Component }
     ]
   },
+
   {
     path: 'dashboards', component: TopNavigationLayoutComponent,
     children: [
       { path: 'dashboard41', component: Dashboard41Component }
     ]
   },
-  // {
-  //   path: '', component: BasicLayoutComponent,
-  //   children: [
-  //     { path: 'starterview', component: StarterViewComponent }
-  //   ]
-  // },
+
   {
     path: '', component: BlankLayoutComponent,
     children: [
       { path: 'login', component: LoginComponent },
     ]
   },
+
   {
-    path: 'user', component: BasicLayoutComponent,
+    path: '', component: BasicLayoutComponent,
     children: [
-      { path: 'user', component: UserComponent }
+      { path: 'starterview', component: StarterViewComponent, canActivate: [AuthGuard] },
+      { path: 'user', component: UserComponent, canActivate: [AuthGuard] }
     ]
   },
 

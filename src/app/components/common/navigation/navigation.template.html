@@ -20,6 +20,9 @@
           IN+
         </div>
       </li>
+      <li [ngClass]="{active: activeRoute('user')}">
+        <a [routerLink]="['/user']"><i class="fa fa-th-large"></i> <span class="nav-label">Usuários</span></a>
+      </li>
       <li [ngClass]="{active: activeRoute('starter')}">
         <a [routerLink]="['/starterview']"><i class="fa fa-th-large"></i> <span class="nav-label">Starter view</span></a>
       </li>
