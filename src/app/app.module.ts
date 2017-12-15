@@ -14,13 +14,11 @@ import { AppviewsModule } from "./views/appviews/appviews.module";
 
 // App modules/components
 import { LayoutsModule } from "./components/common/layouts/layouts.module";
-import { ViewsComponent } from './user/views/views.component';
 import { UserComponent } from './views/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ViewsComponent,
     UserComponent
   ],
   imports: [
