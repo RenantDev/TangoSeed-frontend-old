@@ -1,22 +1,29 @@
 <div class="middle-box text-center loginscreen  animated fadeInDown">
+  <div>
     <div>
-        <div>
-          <img src="assets/images/tango.png" alt="">
-        </div>
-        <h2>TangoSeed</h2>
-        <form class="m-t" role="form" action="#">
-            <div class="form-group">
-                <input type="email" class="form-control" placeholder="Username" required="">
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password" required="">
-            </div>
-            <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
-
-            <a href="#"><small>Forgot password?</small></a>
-            <p class="text-muted text-center"><small>Do not have an account?</small></p>
-            <a class="btn btn-sm btn-white btn-block" href="#">Create an account</a>
-        </form>
-        <p class="m-t"> <small>&copy; 2018</small> </p>
+      <img src="assets/images/tango.png" alt="">
     </div>
+    <h2>TangoSeed</h2>
+    <form class="m-t" role="form" action="#">
+      <div class="form-group">
+        <input [(ngModel)]="usuario.nome" type="text" name="nome" id="usuario" class="form-control" placeholder="Username" required="">
+      </div>
+
+      <div class="form-group">
+        <input [(ngModel)]="usuario.senha" type="password" name="senha" id="senha" class="form-control" placeholder="Password" required="">
+      </div>
+      <button type="submit" (click)="fazerLogin()" class="btn btn-primary block full-width m-b">Login</button>
+
+      <a href="#">
+        <small>Forgot password?</small>
+      </a>
+      <p class="text-muted text-center">
+        <small>Do not have an account?</small>
+      </p>
+      <a class="btn btn-sm btn-white btn-block" href="#">Create an account</a>
+    </form>
+    <p class="m-t">
+      <small>&copy; 2018</small>
+    </p>
+  </div>
 </div>
