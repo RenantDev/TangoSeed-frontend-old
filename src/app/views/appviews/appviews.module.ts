@@ -9,7 +9,7 @@ import { LoginComponent } from "./login.component";
 
 import { PeityModule } from '../../components/charts/peity';
 import { SparklineModule } from '../../components/charts/sparkline';
-import { AuthService } from "app/views/appviews/auth.service";
+import { AuthService } from "app/service/auth.service";
 import { AuthGuard } from "app/guards/auth.guard";
 
 @NgModule({
