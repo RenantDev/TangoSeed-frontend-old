@@ -14,7 +14,8 @@ import { AppviewsModule } from "./views/appviews/appviews.module";
 
 // App modules/components
 import { LayoutsModule } from "./components/common/layouts/layouts.module";
-import { UserComponent } from './views/user/user.component';
+import { UserComponent } from 'app/views/user/user.component';
+
 
 @NgModule({
   declarations: [
