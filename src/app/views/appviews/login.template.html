@@ -6,13 +6,13 @@
     <h2>TangoSeed</h2>
     <form class="m-t" role="form" action="#">
       <div class="form-group">
-        <input [(ngModel)]="usuario.nome" type="text" name="nome" id="usuario" class="form-control" placeholder="Username" required="">
+        <input [(ngModel)]="login.username" name="username" type="text" id="usuario" class="form-control" placeholder="Username" required="">
       </div>
 
       <div class="form-group">
-        <input [(ngModel)]="usuario.senha" type="password" name="senha" id="senha" class="form-control" placeholder="Password" required="">
+        <input [(ngModel)]="login.password" name="password" type="password" id="senha" class="form-control" placeholder="Password" required="">
       </div>
-      <button type="submit" (click)="fazerLogin()" class="btn btn-primary block full-width m-b">Login</button>
+      <button type="submit" (click)="validarLogin()" class="btn btn-primary block full-width m-b">Login</button>
       <a href="#">
         <small>Forgot password?</small>
       </a>
@@ -26,3 +26,4 @@
     </p>
   </div>
 </div>
+

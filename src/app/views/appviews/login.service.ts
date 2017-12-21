@@ -1,30 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { Http, Headers, Response } from '@angular/http';
-// import { Usuario } from './usuario';
+import { Login } from './login';
 
 
 @Injectable()
-export class UserService {
+export class LoginService {
 
     constructor(private http: Http) {
     }
 
-    private oauthUrl = 'http://server.techalin.com/oauth/token';
-    private usersUrl = 'http://server.techalin.com/api/users';
+    private oauthUrl = 'http://api.tangoseed.dev/oauth/token';
 
-    getAccessToken() {
+    getAccessToken(login: Login) {
         const headers = new Headers({
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         });
 
         const postData = {
-            grant_type: 'password',
+            username: login.username,
+            password: login.password,
             client_id: 2,
             client_secret: 'RGNmOzt7WQ8SdNiCcJKKDoYrsFqI2tudopFjOJU3',
-            username: 'albanafmeti@gmail.com',
-            password: 'password',
+            grant_type: 'password',
             scope: ''
         };
 
