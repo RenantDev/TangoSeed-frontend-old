@@ -15,6 +15,7 @@ import {AppviewsModule} from './views/appviews/appviews.module';
 // App modules/components
 import {LayoutsModule} from './components/common/layouts/layouts.module';
 import {UserComponent} from 'app/views/user/user.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {UserComponent} from 'app/views/user/user.component';
         BrowserModule,
         FormsModule,
         HttpModule,
+        HttpClientModule,
         DashboardsModule,
         LayoutsModule,
         AppviewsModule,

@@ -1,19 +1,20 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
-import { Http, Headers, Response } from '@angular/http';
-import { Login } from './login';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Login} from './login';
 
 
 @Injectable()
 export class LoginService {
 
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
     }
 
     private oauthUrl = 'http://api.tangoseed.dev/oauth/token';
 
+
     getAccessToken(login: Login) {
-        const headers = new Headers({
+
+        const headers = new HttpHeaders({
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         });
@@ -22,16 +23,15 @@ export class LoginService {
             username: login.username,
             password: login.password,
             client_id: 2,
-            client_secret: 'RGNmOzt7WQ8SdNiCcJKKDoYrsFqI2tudopFjOJU3',
+            client_secret: 'IpQ4Bdj2Q6idXapi9QhFhaV6Z1kMiRokkNpBgvEd',
             grant_type: 'password',
             scope: ''
         };
 
         return this.http.post(this.oauthUrl, JSON.stringify(postData), {
             headers: headers
-        })
-            .map((res: Response) => res.json())
-            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+        });
+
     }
 
     // getUsers(accessToken: string): Observable<Usuario[]> {
