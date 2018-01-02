@@ -16,6 +16,8 @@ import {
 declare var __karma__: any;
 declare var require: any;
 
+const URL_API = 'http://api.tangoseed.dev/';
+
 // Prevent Karma from running prematurely.
 __karma__.loaded = function () {};
 

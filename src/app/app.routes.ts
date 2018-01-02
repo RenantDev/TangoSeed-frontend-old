@@ -13,7 +13,7 @@ import {LoginComponent} from './views/appviews/login.component';
 import {BlankLayoutComponent} from './components/common/layouts/blankLayout.component';
 import {BasicLayoutComponent} from './components/common/layouts/basicLayout.component';
 import {TopNavigationLayoutComponent} from './components/common/layouts/topNavigationlayout.component';
-import {UserComponent} from 'app/views/user/user.component';
+// import {UserComponent} from 'app/views/user/user.component';
 import {AuthGuard} from 'app/guards/auth.guard';
 
 export const ROUTES: Routes = [
@@ -51,7 +51,7 @@ export const ROUTES: Routes = [
         path: '', component: BasicLayoutComponent,
         children: [
             {path: 'starterview', component: StarterViewComponent, canActivate: [AuthGuard]},
-            {path: 'user', component: UserComponent, canActivate: [AuthGuard]}
+            // {path: 'user', component: UserComponent, canActivate: [AuthGuard]}
         ]
     },
 
