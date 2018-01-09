@@ -13,13 +13,20 @@ export class LoginService {
 
 
     validarLogin(login: Login) {
-
         return this.auth.getAccessToken(login);
         // this.auth.getAccessToken(login);
     }
 
-    teste() {
-        return this.auth.getValidateAcesso();
-    };
+    userInfo() {
+        return this.auth.getValidateAcesso('api/user');
+    }
+
+    checkInLogin(): Observable<boolean> {
+        return this.auth.checkInLogin();
+    }
+
+    logout() {
+        return this.auth.checkOutLogin();
+    }
 
 }

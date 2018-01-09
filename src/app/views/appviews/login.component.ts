@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Login} from './login';
 import {LoginService} from './login.service';
-import {Observable} from 'rxjs/Rx';
-import {AuthService} from '../../service/auth.service';
-import {Http} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
 
 // import { AuthService } from 'app/service/auth.service';
 
@@ -20,19 +18,25 @@ export class LoginComponent implements OnInit {
     constructor(private loginService: LoginService) {
     }
 
-    retornoLogin: Observable<any>;
-    token: Observable<any>;
+    retornoLogin: Promise<any>;
+    checkInLogin: Observable<any>;
 
     ngOnInit() {
+        this.checkInfoLogin();
     }
 
     validarLogin() {
-        // this.login.username = 'asdasd';
-        // console.log(this.login.username);
 
         this.retornoLogin = this.loginService.validarLogin(this.login);
 
-        // this.authService.fazerLogin(this.login);
+    }
+
+    checkInfoLogin() {
+        this.checkInLogin = this.loginService.checkInLogin();
+    }
+
+    logout(){
+        this.checkInLogin = this.loginService.logout();
     }
 
 }

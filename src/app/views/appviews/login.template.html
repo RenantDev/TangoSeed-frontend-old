@@ -13,6 +13,7 @@
         <input [(ngModel)]="login.password" name="password" type="password" id="senha" class="form-control" placeholder="Password" required="">
       </div>
       <button type="submit" (click)="validarLogin()" class="btn btn-primary block full-width m-b">Login</button>
+      <button type="submit" (click)="logout()" class="btn btn-warning block full-width m-b">Logout</button>
       <a href="#">
         <small>Forgot password?</small>
       </a>
@@ -27,7 +28,7 @@
   </div>
 </div>
 
-{{ this.token | async | json }}
+{{ checkInLogin | async | json }}
 <br><br><br><br><br>
 
 {{ retornoLogin | async | json }}

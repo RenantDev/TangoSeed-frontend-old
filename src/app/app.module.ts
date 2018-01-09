@@ -15,6 +15,8 @@ import {AppviewsModule} from './views/appviews/appviews.module';
 // App modules/components
 import {LayoutsModule} from './components/common/layouts/layouts.module';
 import {HttpClientModule} from '@angular/common/http';
+import {AuthGuard} from './guards/auth.guard';
+import {AuthService} from './service/auth.service';
 
 
 @NgModule({
@@ -31,7 +33,10 @@ import {HttpClientModule} from '@angular/common/http';
         AppviewsModule,
         RouterModule.forRoot(ROUTES)
     ],
-    providers: [],
+    providers: [
+        AuthService,
+        AuthGuard
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
