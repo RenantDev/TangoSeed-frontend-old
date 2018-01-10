@@ -25,7 +25,7 @@ export class AuthService {
             username: login.username,
             password: login.password,
             client_id: 2,
-            client_secret: 'YED3SoQwpmfqPRIFbf2Lfcl18YcPloYeNbM8Xt9I',
+            client_secret: 'viMpCctjWE1Nu0MhKPJ9azifu0O8FITTBHUORPVa',
             grant_type: 'password',
             scope: ''
         };
@@ -35,7 +35,7 @@ export class AuthService {
         })
             .toPromise()
             .then((response: Response) => {
-                let token = response.json().access_token;
+                const token = response.json().access_token;
                 localStorage.setItem('token', token);
                 return token;
             });
@@ -76,9 +76,10 @@ export class AuthService {
             'Authorization': 'Bearer ' + localStorage.getItem('token'),
         });
 
-        return this.http.get(this.baseUrl + 'api/logout', {
+        return this.http.post(this.baseUrl + 'api/logout', null, {
             headers: headers
         }).map((response: Response) => {
+            localStorage.removeItem('token');
             return response.json();
         });
     }
